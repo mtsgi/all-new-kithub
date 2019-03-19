@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AllNewKithub</title>
+    <title><%= kithub_title() %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
   </head>
 
   <body>
+    <header>
+    <%= link_to( image_tag("icon.png"), :root, class: "header-icon" ) %>
+    <%= form_tag() do %>
+      <%= text_field_tag( "q", params[:q], placeholder: "検索" ) %>
+    <% end %>
+    </header>
     <%= yield %>
+    <footer>
+      ©2019 kitHub
+    </footer>
   </body>
 </html>
