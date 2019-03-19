@@ -1,31 +1,85 @@
-body{
-  margin: 0;
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 100;
 }
-header{
-  padding: 8px 8px 6px 8px;
-  background: #303030;
+
+header {
+    padding: 8px;
+    background: #303030;
+    height: 52px;
 }
-.header-icon img{
-  height: 50px;
+
+.header-icon img {
+    height: 50px;
 }
-header form{
-  position: absolute;
-  top: 18px;
-  left: 70px;
-  display: inline-block;
+
+header form {
+    position: absolute;
+    top: 18px;
+    left: 188px;
+    display: inline-block;
 }
-header form input{
-  border: none;
-  padding: 6px;
-  border-radius: 4px;
-  font-size: 16px;
-  background: rgba(255,255,255,.3);
-  color: #ffffff;
-  width: 200px;
-  transition: .25s all ease;
+
+header form input {
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, .3);
+    color: #ffffff;
+    width: 200px;
+    transition: .25s all ease;
 }
-header form input:focus{
-  background: #f0f0f0;
-  color: #505050;
-  width: 300px;
+
+header form input:focus {
+    background: #f0f0f0;
+    color: #505050;
+    width: 300px;
+}
+
+main {
+    font-size: 18px;
+    background: #f0f0f0;
+}
+
+#page_title {
+    font-size: 24px;
+    padding: 10px 40px;
+}
+
+#tabs {
+    padding: 0 20px;
+    border-bottom: 1px solid #909090;
+}
+
+#tabs a {
+    cursor: pointer;
+    color: #909090;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 4px 10px;
+    border-radius: 4px 4px 0 0;
+}
+#tabs a:hover{
+    color: #000000;
+    background: #ffffff;
+}
+#tabs a.active {
+    color: #000000;
+    background: white;
+    border-top: 4px solid dodgerblue;
+    border-left: 1px solid #909090;
+    border-right: 1px solid #909090;
+    box-shadow: 0 2px 0 0 white;
+}
+
+#content {
+    background: #ffffff;
+    padding: 20px 30px;
+}
+footer{
+    font-size: 16px;
+    color: #909090;
+    padding: 10px 30px;
 }

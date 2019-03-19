@@ -8,16 +8,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
 
   <body>
     <header>
-    <%= link_to( image_tag("icon.png"), :root, class: "header-icon" ) %>
-    <%= form_tag() do %>
-      <%= text_field_tag( "q", params[:q], placeholder: "検索" ) %>
-    <% end %>
+      <%= link_to( image_tag("logo.png"), :root, class: "header-icon" ) %>
+      <%= form_tag() do %>
+        <%= text_field_tag( "q", params[:q], placeholder: "検索" ) %>
+      <% end %>
     </header>
-    <%= yield %>
+    
+    <main>
+      <%= yield %>
+    </main>
+    
     <footer>
       ©2019 kitHub
     </footer>
