@@ -1,0 +1,37 @@
+<div id="page_title"><span class="fa fa-address-card"></span> kitHubアカウント</div>
+<div id="tabs">
+    <a href="/users/new" class="active"><span class="fa fa-user-plus"></span> ユーザー登録</a>
+    <a><span class="fa fa-sign-in-alt"></span> ログイン</a>
+    <a href="/users"><span class="fa fa-user"></span> ユーザー一覧</a>
+</div>
+<div id="content">
+    kitHubにアプリケーションを投稿するにはユーザー登録が必要です。
+    <% if( @user.errors.present? ) %>
+        <% @user.errors.messages.each do |message| %>
+            <% message[1].each do |m| %>
+                <div class="error"><%= m %></div>
+            <% end %>
+        <% end %>
+    <% end %>
+    <%= form_with( model: @user, local: true ) do |f| %>
+
+        <%= f.label( :authorid, "作者ID" ) %>
+        あなたのアカウント名になります。他のユーザーが使用しているIDは使えません。
+        <%= f.text_field :authorid %>
+
+        <%= f.label( :name, "名前" ) %>
+        あなたの名前(ユーザー名)です。作者IDと同一でも構いません。
+        <%= f.text_field :name %>
+
+        <%= f.label( :password, "パスワード" ) %>
+        パスワードは8文字以上にしてください。
+        <%= f.password_field(:password, placeholder: "パスワード") %>
+        <%= f.password_field(:password_confirmation, placeholder: "パスワード(確認)") %>
+
+        <%= f.label( :profile, "プロフィール" ) %>
+        自己紹介文です(任意)。
+        <%= f.text_area(:profile) %>
+
+        <%= f.submit("kitHubに登録") %>
+    <% end %>
+</div>

@@ -1,0 +1,23 @@
+<div id="page_title"><span class="fa fa-address-card"></span> kitHubアカウント</div>
+<div id="tabs">
+    <a href="/users/new"><span class="fa fa-user-plus"></span> ユーザー登録</a>
+    <a><span class="fa fa-sign-in-alt"></span> ログイン</a>
+    <a class="active"><span class="fa fa-user"></span> ユーザー一覧</a>
+</div>
+<div id="content">
+kitHubに登録しているユーザーの一覧です。
+<% @users.each do |u| %>
+    <div class="user">
+        <span class="fa fa-user"></span>
+        <%= link_to( u.authorid, "users/" + u.authorid ) %>
+        <%= u.name %>
+        <div class="user-profile">
+        <% if( u.profile ) %>
+            <%= u.profile %>
+        <% else %>
+            プロフィールが設定されていません。
+        <% end %>
+        </div>
+    </div>
+<% end %>
+</div>
