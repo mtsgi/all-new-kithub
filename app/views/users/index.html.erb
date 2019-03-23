@@ -9,7 +9,7 @@ kitHubに登録しているユーザーの一覧です。
 <% @users.each do |u| %>
     <div class="user">
         <span class="fa fa-user"></span>
-        <%= link_to( u.authorid, "users/" + u.authorid ) %>
+        <%= link_to( u.authorid, "/" + u.authorid ) %>
         <%= u.name %>
         <div class="user-profile">
         <% if( u.profile ) %>

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         @user = User.new(params[:user].permit(:name, :authorid, :password, :profile))
         if( @user.save )
             session[:user_id] = @user.id
-            redirect_to( :root, notice: "ユーザー登録が完了しました。" )
+            redirect_to( "/"+@user.authorid , notice: "ユーザー登録が完了しました。" )
         else
             render( "/users/new" )
         end
@@ -15,5 +15,9 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all()
+    end
+
+    def show
+        @user = User.find_by_authorid(params[:id])
     end
 end
