@@ -1,24 +1,9 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# kitHub
+### all-new-kithub
+まったく新しいkitHub。
+### Manage your app
+kit用アプリケーションのバージョン管理・アップロード
+### Find new app
+世界中のkitアプリからお気に入りを見つけ出す
+### Change the style
+新しいkitテーマを発見・ダウンロード
