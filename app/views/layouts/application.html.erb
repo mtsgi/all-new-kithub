@@ -18,6 +18,15 @@
       <%= form_tag() do %>
         <%= text_field_tag( "q", params[:q], placeholder: "検索" ) %>
       <% end %>
+      <div id="account">
+      <% if( account ) %>
+        <%= link_to( account.authorid, "/" + account.authorid, id: "account-authorid" ) %>
+        <%= link_to( "マイページ", "/my" ) %>
+      <% else %>
+        <%= link_to( "新規登録", new_user_path ) %>
+        <%= link_to( "ログイン", new_user_path ) %>
+      <% end %>
+      </div>
     </header>
     
     <main>
