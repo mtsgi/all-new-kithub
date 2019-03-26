@@ -1,19 +1,30 @@
-<div id="page_title"><span class="fa fa-user"></span> <%= @user.authorid %></div>
-<div id="tabs">
-    <a class="active"><span class="fa fa-user-circle"></span> ユーザー情報</a>
-    <a><span class="fa fa-book"></span> 投稿したアプリ</a>
-    <a><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
-</div>
+<% if(@user) %>
+    <div id="page_title"><span class="fa fa-user"></span> <%= @user.authorid %></div>
+    <div id="tabs">
+        <a class="active"><span class="fa fa-user-circle"></span> ユーザー情報</a>
+        <a><span class="fa fa-book"></span> 投稿したアプリ</a>
+        <a><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
+    </div>
+<% else %>
+    <div id="page_title"><span class="fa fa-question-circle"></span> 見つかりません</div>
+    <div id="tabs">
+        <a class="active"><span class="fa fa-exclamation"></span> Error</a>
+    </div>
+<% end %>
 <div id="content">
+<% if(@user) %>
 <div class="box">
     <div style="font-size: 28px;"><%= @user.authorid %></div>
     <div style="font-size: 18px;"><%= @user.name %></div>
     <hr>
-        <% if( @user.profile ) %>
+        <% if( @user.profile && @user.profile.length != 0 ) %>
             <%= @user.profile %>
         <% else %>
             プロフィールが設定されていません。
         <% end %>
 </div>
 <div><%= @user.created_at %>に登録</div>
+<% else %>
+エラーが発生しました。ユーザーまたはページを見つけられません。
+<% end %>
 </div>

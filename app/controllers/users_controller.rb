@@ -20,4 +20,8 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by_authorid(params[:id])
     end
+
+    def login
+        
+    end
 end
