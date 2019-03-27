@@ -4,7 +4,7 @@
     <a class="active"><span class="fa fa-sign-in-alt"></span> ログイン</a>
     <a href="/users"><span class="fa fa-user"></span> ユーザー一覧</a>
 </div>
-<div id="content">
+<div id="content" data-turbolinks="false">
 <%= form_with( url: sessions_path, local: true ) do |f| %>
     <%= f.text_field :authorid, placeholder: "作者ID" %>
     <%= f.password_field(:password, placeholder: "パスワード") %>

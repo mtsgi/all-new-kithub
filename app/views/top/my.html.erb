@@ -7,7 +7,6 @@
 <%= link_to("プロフィールへ", "/"+account.authorid, class: "button")%>
 <%= link_to("新規アプリケーションの登録", "/apps/new", class: "button") %>
 <%= link_to("新規テーマの投稿", "/themes/new", class: "button") %>
-<%= link_to("ログアウト", "/users/logout", class: "button") %>
 <%= link_to("kitHubから退会", "/users/delete", class: "button") %>
 <%= link_to("ログアウト", "/sessions/" + account.authorid, method: :delete, class: "button" ) %>
 </div>
