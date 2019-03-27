@@ -5,4 +5,9 @@
     <a href="/users"><span class="fa fa-user"></span> ユーザー一覧</a>
 </div>
 <div id="content">
+<%= form_with( url: sessions_path, local: true ) do |f| %>
+    <%= f.text_field :authorid, placeholder: "作者ID" %>
+    <%= f.password_field(:password, placeholder: "パスワード") %>
+    <%= f.submit("ログイン") %>
+<% end %>
 </div>

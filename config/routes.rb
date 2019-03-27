@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     get "my" => "top#my"
     resources :users , param: :authorid
     get ":id" => "users#show"
-    resources :session, only: [:create, :destroy]
+    resources :sessions, only: [:create, :destroy]
 end

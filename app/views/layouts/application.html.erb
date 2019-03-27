@@ -30,6 +30,9 @@
     </header>
     
     <main>
+      <% if(flash.notice) %>
+        <div class="notice" id="notice"><%= flash.notice %></div>
+      <% end %>
       <%= yield %>
     </main>
     

@@ -208,3 +208,7 @@ footer{
     background: dodgerblue;
     color: white;
 }
+.notice{
+    background: lightblue;
+    padding: 5px;
+}
