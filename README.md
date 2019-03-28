@@ -1,9 +1,7 @@
-# kitHub
-### all-new-kithub
-まったく新しいkitHub。
-### Manage your app
+## まったく新しいkitHub
+### アプリ機能
 kit用アプリケーションのバージョン管理・アップロード
-### Find new app
+### 検索機能
 世界中のkitアプリからお気に入りを見つけ出す
-### Change the style
+### テーマ機能
 新しいkitテーマを発見・ダウンロード

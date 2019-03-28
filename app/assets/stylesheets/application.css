@@ -4,6 +4,10 @@ body {
     font-weight: 100;
 }
 
+a{
+    color: dodgerblue;
+}
+
 input, textarea{
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 100;

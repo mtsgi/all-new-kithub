@@ -5,9 +5,16 @@
     <a href="/users"><span class="fa fa-user"></span> ユーザー一覧</a>
 </div>
 <div id="content" data-turbolinks="false">
-<%= form_with( url: sessions_path, local: true ) do |f| %>
-    <%= f.text_field :authorid, placeholder: "作者ID" %>
-    <%= f.password_field(:password, placeholder: "パスワード") %>
-    <%= f.submit("ログイン") %>
+<% if(!account) %>
+    <%= form_with( url: sessions_path, local: true ) do |f| %>
+        <%= f.label( :authorid, "作者ID" ) %>
+        <%= f.text_field :authorid, placeholder: "作者ID" %>
+        <%= f.label( :password, "パスワード" ) %>
+        <%= f.password_field(:password, placeholder: "パスワード") %>
+        <%= f.submit("ログイン") %>
+    <% end %>
+<% else %>
+既にログイン済みです。<br>
+ログアウトは<%= link_to( "マイページ", "/my" ) %>から。
 <% end %>
 </div>
