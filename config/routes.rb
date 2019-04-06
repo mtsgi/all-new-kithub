@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get "guide" => "top#guide"
     get "my" => "top#my"
     resources :users , param: :authorid
+    resources :apps , param: :appid
     get ":id" => "users#show"
+    get ":authorid/:appid" => "apps#show"
     resources :sessions, only: [:create, :destroy]
 end

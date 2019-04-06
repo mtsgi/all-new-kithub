@@ -1,0 +1,40 @@
+<div id="page_title"><span class="fa fa-user-circle"></span> マイページ</div>
+<div id="tabs">
+    <a href="/my"><span class="fa fa-user-circle"></span> マイページ</a>
+    <a class="active"><span class="fa fa-plus-circle"></span> アプリケーションの追加</a>
+    <a href="/themes/new"><span class="fa fa-plus-circle"></span> テーマの追加</a>
+</div>
+<div id="content">
+    <% if( @app.errors.present? ) %>
+        <% @app.errors.messages.each do |message| %>
+            <% message[1].each do |m| %>
+                <div class="error"><%= m %></div>
+            <% end %>
+        <% end %>
+    <% end %>
+    <%= form_with( model: @app, local: true ) do |f| %>
+
+        <%= f.label( :name, "アプリ名" ) %>
+        アプリケーションの名前です(define.jsonにおけるnameに相当)。日本語を使用することができます。
+        <%= f.text_field :name %>
+
+        <%= f.label( :appid, "アプリケーションID" ) %>
+        アプリケーションの識別子です(define.jsonにおけるidに相当)。アプリケーションのディレクトリ名と同一のものです。他のアプリケーションと重複することはできません。
+        <%= f.text_field :appid %>
+
+        <%= f.label( :desc, "説明文" ) %>
+        アプリケーションの説明文です。ダウンロードしようとしている人に向けてアプリを紹介する文章となります(任意)。
+        <%= f.text_area(:desc) %>
+
+        <%= f.label( :genre, "ジャンル" ) %>
+        アプリケーションのジャンルを指定します(任意)。日本語を使用することができます。
+        <%= f.text_field :genre %>
+
+        <%= f.label( :url, "Webサイト" ) %>
+        アプリまたは作者のWebサイトを指定できます(任意)。
+        <%= f.text_field :url %>
+
+        アプリケーションを追加した後は、アプリにバージョンを登録することでアップロードすることができるようになります。
+        <%= f.submit("アプリケーションを追加") %>
+    <% end %>
+</div>
