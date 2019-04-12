@@ -14,4 +14,9 @@ class AppsController < ApplicationController
             render( "/apps/new" )
         end
     end
+
+    def show
+        @app = App.find_by_appid( params[:appid] )
+        @user = User.find_by_authorid( params[:authorid] )
+    end
 end

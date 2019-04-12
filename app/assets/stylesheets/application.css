@@ -112,7 +112,7 @@ footer{
     border-radius: 5px;
     transition: .2s all ease;
 }
-#content form input[type="text"]:focus, #content form input[type="password"]:focus{
+#content form input[type="text"]:focus, #content form textarea:focus, #content form input[type="password"]:focus{
     background: #ffffff;
     box-shadow: 0 0 0 4px skyblue;
 }
@@ -215,4 +215,29 @@ footer{
 .notice{
     background: lightblue;
     padding: 5px;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.greenbutton{
+  float: right;
+  background: green;
+  background : linear-gradient(#00F014 0%,#00A819 100%);
+  color: white;
+  text-decoration: none;
+  padding: 2px 8px;
+  margin: 0px;
+  border: 1px solid green;
+border-radius: 4px;
+}
+.app{
+    padding: 10px;
+    border-bottom: 1px solid #909090;
+}
+.app a{
+    display: block;
+    font-size: 24px;
+    padding: 5px 0;
 }

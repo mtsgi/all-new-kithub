@@ -1,0 +1,32 @@
+<% if(@user) %>
+    <div id="page_title"><span class="fa fa-user"></span> <%= @user.authorid %>の投稿したアプリ</div>
+    <div id="tabs">
+        <a href="/<%= @user.authorid %>"><span class="fa fa-user-circle"></span> ユーザー情報</a>
+        <a class="active"><span class="fa fa-book"></span> 投稿したアプリ</a>
+        <a href="/<%= @user.authorid %>/themes"><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
+    </div>
+<% else %>
+    <div id="page_title"><span class="fa fa-question-circle"></span> 見つかりません</div>
+    <div id="tabs">
+        <a class="active"><span class="fa fa-exclamation"></span> Error</a>
+    </div>
+<% end %>
+<div id="content">
+<% if(@user) %>
+
+<%= link_to( "新規アプリケーションの追加", new_app_path, class: "greenbutton" ) %>
+
+<div style="padding: 5px"><%= @apps.length %>個のアプリケーション</div>
+
+<% @apps.each do |a| %>
+    <div class="app">
+        <a href="./<%= a.appid %>"><%= @user.authorid %> / <strong><%= a.appid %></strong></a>
+        <%= a.name %>
+        <%= a.genre %>
+    </div>
+<% end %>
+
+<% else %>
+エラーが発生しました。ユーザーまたはページを見つけられません。
+<% end %>
+</div>

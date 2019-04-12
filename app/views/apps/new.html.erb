@@ -14,6 +14,8 @@
     <% end %>
     <%= form_with( model: @app, local: true ) do |f| %>
 
+        <%= f.text_field( :user_id, readonly: true, value: account.id, class: "hidden" ) %>
+
         <%= f.label( :name, "アプリ名" ) %>
         アプリケーションの名前です(define.jsonにおけるnameに相当)。日本語を使用することができます。
         <%= f.text_field :name %>

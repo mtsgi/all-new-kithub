@@ -2,8 +2,8 @@
     <div id="page_title"><span class="fa fa-user"></span> <%= @user.authorid %></div>
     <div id="tabs">
         <a class="active"><span class="fa fa-user-circle"></span> ユーザー情報</a>
-        <a><span class="fa fa-book"></span> 投稿したアプリ</a>
-        <a><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
+        <a href="/<%= @user.authorid %>/apps"><span class="fa fa-book"></span> 投稿したアプリ</a>
+        <a href="/<%= @user.authorid %>/themes"><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
     </div>
 <% else %>
     <div id="page_title"><span class="fa fa-question-circle"></span> 見つかりません</div>
@@ -23,7 +23,12 @@
             プロフィールが設定されていません。
         <% end %>
 </div>
-<div><%= @user.created_at %>に登録</div>
+
+<div style="padding: 5px"><%= @user.created_at %>に登録</div>
+
+<%= link_to( "投稿アプリケーションの一覧", "/" + @user.authorid + "/apps", class: "button" ) %>
+<%= link_to( "投稿テーマの一覧", "/" + @user.authorid + "/themes", class: "button" ) %>
+
 <% else %>
 エラーが発生しました。ユーザーまたはページを見つけられません。
 <% end %>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :users , param: :authorid
     resources :apps , param: :appid
     get ":id" => "users#show"
+    get ":id/apps" => "users#apps"
     get ":authorid/:appid" => "apps#show"
     resources :sessions, only: [:create, :destroy]
 end

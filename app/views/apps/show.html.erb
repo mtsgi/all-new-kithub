@@ -1,0 +1,21 @@
+<% if(@app) %>
+    <div id="page_title"><span class="fa fa-book"></span> <%= link_to( @user.authorid, "/" + @user.authorid ) %> / <strong><%= link_to( @app.appid, "/" + @user.authorid + "/" + @app.appid ) %></strong></div>
+    <div id="tabs">
+        <a class="active"><span class="fa fa-info-circle"></span> 情報</a>
+        <a href="apps"><span class="fa fa-book"></span> 投稿したアプリ</a>
+        <a href="themes"><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
+    </div>
+<% else %>
+    <div id="page_title"><span class="fa fa-question-circle"></span> 見つかりません</div>
+    <div id="tabs">
+        <a class="active"><span class="fa fa-exclamation"></span> Error</a>
+    </div>
+<% end %>
+<div id="content">
+<% if(@app) %>
+<strong><%= @app.name %></strong>
+<br><%= @app.desc %>
+<% else %>
+エラーが発生しました。アプリケーションまたはページを見つけられません。
+<% end %>
+</div>

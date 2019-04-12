@@ -24,4 +24,9 @@ class UsersController < ApplicationController
     def login
         
     end
+
+    def apps
+        @user = User.find_by_authorid(params[:id])
+        @apps = App.where(user_id: @user.id)
+    end
 end
