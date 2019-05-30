@@ -17,6 +17,17 @@ class AppsController < ApplicationController
 
     def show
         @app = App.find_by_appid( params[:appid] )
+        if( User.find( @app.user_id ).authorid != params[:authorid] )
+            @app = nil
+        end
+        @user = User.find_by_authorid( params[:authorid] )
+    end
+
+    def forum
+        @app = App.find_by_appid( params[:appid] )
+        if( User.find( @app.user_id ).authorid != params[:authorid] )
+            @app = nil
+        end
         @user = User.find_by_authorid( params[:authorid] )
     end
 end

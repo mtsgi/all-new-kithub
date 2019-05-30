@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get ":id" => "users#show"
     get ":id/apps" => "users#apps"
     get ":authorid/:appid" => "apps#show"
+    get ":authorid/:appid/forum" => "apps#forum"
     resources :sessions, only: [:create, :destroy]
 end

@@ -1,9 +1,10 @@
 <% if(@app) %>
+    <a class="app_star"><i class="far fa-star"></i>Star</a>
     <div id="page_title"><span class="fa fa-book"></span> <%= link_to( @user.authorid, "/" + @user.authorid ) %> / <strong><%= link_to( @app.appid, "/" + @user.authorid + "/" + @app.appid ) %></strong></div>
     <div id="tabs">
-        <a class="active"><span class="fa fa-info-circle"></span> 情報</a>
-        <a href="apps"><span class="fa fa-book"></span> 投稿したアプリ</a>
-        <a href="themes"><span class="fa fa-swatchbook"></span> 投稿したテーマ</a>
+        <a class="active"><span class="fa fa-info-circle"></span> アプリ情報</a>
+        <a href="/<%= @user.authorid %>/<%= @app.appid %>/versions"><span class="fa fa-code-branch"></span> バージョン</a>
+        <a href="/<%= @user.authorid %>/<%= @app.appid %>/forum"><span class="fa fa-comments"></span> フォーラム</a>
     </div>
 <% else %>
     <div id="page_title"><span class="fa fa-question-circle"></span> 見つかりません</div>
@@ -13,9 +14,24 @@
 <% end %>
 <div id="content">
 <% if(@app) %>
-<strong><%= @app.name %></strong>
-<br><%= @app.desc %>
-<% else %>
-エラーが発生しました。アプリケーションまたはページを見つけられません。
+    <%= link_to( "ダウンロード", new_app_path, class: "greenbutton" ) %>
+    <strong><%= @app.name %></strong>
+    <br><%= @app.desc %>
+    <hr>
+    ジャンル：<%= @app.genre %><br>
+    Webサイト：<%= link_to( @app.url, @app.url ) %>
+        <div class="flexbox">
+            <div class="flextitle">
+                <i class="fa fa-code-branch"></i>バージョン
+            </div>
+            <div class="flexcontent">
+                ・<%= link_to( "最新バージョン", "/search" ) %>
+                <div class="flexdesc">アプリ／テーマのダウンロードは登録なしで行えます</div>
+                ・<%= link_to( "バージョン一覧", "/" + @user.authorid + "/" + @app.appid + "/versions" ) %>
+                <div class="flexdesc">過去に投稿されたバージョンの一覧です</div>
+            </div>
+        </div>
+    <% else %>
+    エラーが発生しました。アプリケーションまたはページを見つけられません。
 <% end %>
 </div>

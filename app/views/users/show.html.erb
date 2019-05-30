@@ -16,17 +16,20 @@
 <div class="box">
     <div style="font-size: 28px;"><%= @user.authorid %></div>
     <div style="font-size: 18px;"><%= @user.name %></div>
-    <hr>
-        <% if( @user.profile && @user.profile.length != 0 ) %>
-            <%= @user.profile %>
-        <% else %>
-            プロフィールが設定されていません。
-        <% end %>
+</div>
+<div class="fukidasi">
+    <% if( @user.profile && @user.profile.length != 0 ) %>
+        <%= @user.profile %>
+    <% else %>
+        プロフィールが設定されていません。
+    <% end %>
 </div>
 
 <div style="padding: 5px"><%= @user.created_at %>に登録</div>
-
+<hr>
+<i class="fa fa-book button_icon"></i>
 <%= link_to( "投稿アプリケーションの一覧", "/" + @user.authorid + "/apps", class: "button" ) %>
+<i class="fa fa-swatchbook button_icon"></i>
 <%= link_to( "投稿テーマの一覧", "/" + @user.authorid + "/themes", class: "button" ) %>
 
 <% else %>

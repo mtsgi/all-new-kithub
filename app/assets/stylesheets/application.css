@@ -212,7 +212,11 @@ footer{
     background: dodgerblue;
     color: white;
 }
-.notice{
+.button_icon{
+    display: block!important;
+    float: left;
+    margin: 10px;
+}.notice{
     background: lightblue;
     padding: 5px;
 }
@@ -240,4 +244,53 @@ border-radius: 4px;
     display: block;
     font-size: 24px;
     padding: 5px 0;
+}
+.app_star{
+    margin: 10px;
+    background : linear-gradient(#F5F5F5 0%,#E8E8E8 100%);
+    padding: 2px 10px;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    color: #303030;
+}
+.fukidasi{
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 20px;
+}
+.fukidasi:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 40px;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #f0f0f0;
+}
+.flexbox{
+    display: flex;
+    margin: 10px 0;
+}
+.flextitle{
+    background: #f0f0f0;
+    padding: 16px;
+    font-size: 20px;
+    width: 300px;
+    font-weight: 400;
+}
+.flextitle i{
+    display: block;
+    font-size: 60px;
+}
+.flexcontent a{
+    font-weight: 400;
+}
+.flexdesc{
+    font-size: 16px;
+    color: #909090;
+    padding: 5px 10px;
 }

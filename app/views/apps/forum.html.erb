@@ -1,0 +1,13 @@
+<% if(@app) %>
+    <a class="app_star"><i class="far fa-star"></i>Star</a>
+    <div id="page_title"><span class="fa fa-book"></span> <%= link_to( @user.authorid, "/" + @user.authorid ) %> / <strong><%= link_to( @app.appid, "/" + @user.authorid + "/" + @app.appid ) %></strong></div>
+    <div id="tabs">
+        <a href="/<%= @user.authorid %>/<%= @app.appid %>"><span class="fa fa-info-circle"></span> アプリ情報</a>
+        <a href="/<%= @user.authorid %>/<%= @app.appid %>/versions"><span class="fa fa-code-branch"></span> バージョン</a>
+        <a class="active"><span class="fa fa-comments"></span> フォーラム</a>
+    </div>
+<% end %>
+
+<div id="content">
+    <%= @app.name %>のフォーラム
+</div>

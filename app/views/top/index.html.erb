@@ -7,5 +7,32 @@
 <div id="content">
     <div class="box">kitHub v0.1へようこそ！</div>
     はじめての方は、<%= link_to( "使い方ガイド", "/guide" ) %>や、<%= link_to( "新規登録", new_user_path ) %>をご覧ください。<hr>
-    ・<%= link_to( "kitHubアカウント", "/users" ) %>では、kitHubユーザーの一覧を見ることができます。
+
+    <div class="flexbox">
+        <div class="flextitle">
+            <i class="fa fa-address-card"></i>kitHubアカウント
+        </div>
+        <div class="flexcontent">
+            ・<%= link_to( "ユーザー一覧", "/users" ) %>
+            <div class="flexdesc">kitHubに登録しているユーザーの一覧を確認できます</div>
+            ・<%= link_to( "ログイン", "/users/login" ) %>
+            <div class="flexdesc">登録しているkitHubアカウントにログインできます</div>
+            ・<%= link_to( "新規登録", "/users/new" ) %>
+            <div class="flexdesc">まだ登録したことがない方はこちら</div>
+        </div>
+    </div>
+
+    <div class="flexbox">
+        <div class="flextitle">
+            <i class="fa fa-search"></i>見つける
+        </div>
+        <div class="flexcontent">
+            ・<%= link_to( "検索", "/search" ) %>
+            <div class="flexdesc">アプリ／テーマのダウンロードは登録なしで行えます</div>
+            ・<%= link_to( "ピックアップ", "/pickup" ) %>
+            <div class="flexdesc">おすすめのkitHubアプリ／テーマです</div>
+            ・<%= link_to( "新着アプリ", "/apps" ) %>
+            <div class="flexdesc">すべてのアプリを新しい順に表示します</div>
+        </div>
+    </div>
 </div>
