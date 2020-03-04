@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',                   '5.1.6'
 gem 'bcrypt',                  '3.1.12'
-gem 'puma',                    '3.12.3'
+gem 'puma',                    '3.12.4'
 gem 'uglifier',                '3.2.0'
 gem 'jquery-rails',            '4.3.1'
 gem 'turbolinks',              '5.0.1'
